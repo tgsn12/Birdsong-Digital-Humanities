@@ -8,5 +8,5 @@ title: Distant Reading Project
 
 # A Distant Reading Assignment
 
-![image alt text](Screenshot 2026-09-22 at 21.05.25.png)
+![alt text](Screenshot 2026-09-22 at 21.05.25.png)
 
