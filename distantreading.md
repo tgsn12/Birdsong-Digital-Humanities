@@ -8,5 +8,5 @@ title: Distant Reading Project
 
 # A Distant Reading Assignment
 
-![The Wizard Of OZ](Screenshot 2026-09-22 at 21.05.25.png)
+![The Wizard Of OZ](Wizard Of OZ.png)
 
