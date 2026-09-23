@@ -1,7 +1,3 @@
 ---
-layout: default
-title: Distance Reading Assignment
----
-
-Welcome to my site. Click below to view my analysis:
-[Distant Reading Project](portfolio/Birdsong-Digital-Humanities.md)
+theme: jekyll-theme-cayman
+Title: DIG 3171 Example Repository 
