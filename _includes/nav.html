@@ -1,14 +1,17 @@
 <style>
-  nav {
+  .custom-nav {
     text-align: center;
     margin: 20px 0;
   }
 
-  nav a,
-  nav a:link,
-  nav a:visited {
-    text-decoration: none;
+  .custom-nav a,
+  .custom-nav a:link,
+  .custom-nav a:visited,
+  .custom-nav a:focus,
+  .custom-nav a:active {
+    text-decoration: none !important;
     color: #222222 !important;
+    background-color: transparent !important;
     margin: 0 8px;
     padding: 6px 12px;
     border-radius: 4px;
@@ -17,10 +20,10 @@
     font-weight: bold;
   }
 
-  nav a:hover,
-  nav a:active {
-    background: linear-gradient(to right, #ff5da0 0%, #7b56de 100%);
-    box-shadow: 0 0 10px rgba(239, 93, 160, 0.6), 
+  .custom-nav a:hover,
+  .custom-nav a:focus-visible {
+    background: linear-gradient(to right, #ff5da0 0%, #7b56de 100%) !important;
+    box-shadow: 0 0 10px rgba(239, 93, 160, 0.6),
                 0 0 20px rgba(123, 86, 222, 0.4);
     color: white !important;
   }
@@ -32,7 +35,7 @@
   }
 </style>
 
-<nav>
+<nav class="custom-nav">
   <a href="{{ '/' | relative_url }}">Home</a>
   <span class="separator">|</span>
 
