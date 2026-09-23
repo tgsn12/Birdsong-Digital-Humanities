@@ -1,5 +1,8 @@
 ---
 theme: jekyll-theme-cayman
-Title: Distant Reading
+title: Birdsong Digital Humanities
+description: Digital Humanities Course Projects
+baseurl: "/Birdsong-Digital-Humanities"
+url: "https://tgsn12.github.io"
 
 
