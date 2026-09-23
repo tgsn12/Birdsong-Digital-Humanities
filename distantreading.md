@@ -12,6 +12,6 @@ title: Distant Reading Project
 
 This file ends in ".md," which means it is a Markdown document, rather than HTML. I find Markdown easier to use than HTML, but you can easily change this to an HTML document if you prefer: just replace the .md with .html and commit! 
 
-![image alt text]()
+![image alt text](Screenshot 2026-09-22 at 21.05.25.png)
 
 Here is a fun link to a [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/). Once you grasp the basics here, go add "Markdown" to your list of skills on your resume!
