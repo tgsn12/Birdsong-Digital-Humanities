@@ -1,203 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<p> <a href="https://tgsn12.github.io/Birdsong-Digital-Humanities/">Home</a>
-<p> This template was copied from <a href="https://iloveepoetry.org/creative/tracery2htmltemplate.html">Leonardo Flores's page</a> and modified for this class.</p>
-<meta charset="UTF-8">
-  <title>{{ page.title }}</A Beginning Coder>
-  <title>{{ A Beginning Coder }}</A Beginning Coder>
+    <meta charset="UTF-8">
+    <title>A Beginning Coder</title>
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: deepskyblue;
+        }
+        
+        #title-container {
+            width: 100%;
+            text-align: center;
+            max-height: 300px;
+            font-size: 4em;
+        }
+        
+        @media (max-width: 600px) {
+            #title-container {
+                max-height: 200px;
+            }
+            
+            #text-container {
+                width: 100%;
+            }
+        }
+        
+        #text-container {
+            text-align: center;
+            font-size: 1.5em;
+            color: #431bf7c6;
+            margin: auto; 
+            border: 0px solid black; 
+            padding: 10px;
+            width: 600px;
+        }
+
+        #button-container {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 100%;
+        }
+        
+        .button {
+            margin: 10px;
+            font-size: 2em;
+        }
+        
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.8); 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            font-size: 2.5em;
+        }
+
+        .close {
+            color: #36454F; 
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body>
 
+<body>	
+    <p>
+        <a href="https://tgsn12.github.io/Birdsong-Digital-Humanities/">Home</a>
+    </p>
 
-<!--
-Tracery to HTML Template
-Copyright 2023 Leonardo Flores
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
--->
+    <!-- Tracery to HTML Template Copyright 2023 Leonardo Flores... -->
+	
+    <div id="title-container">A Beginning Coder!</div>
 
+    <div id="text-container" style="color: black;"> I'm learning as I go!</div>
 
-<style>
-body {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-height: 100vh;
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: deepskyblue;
-}
+    <div id="button-container">
+        <button class="button" type="button" onclick="displayAbout()">About</button>
+        <button class="button" type="button" onclick="displayString()">Regenerate</button>
+    </div>
 
-#title-container {
-width: 100%;
-text-align: center;
-max-height: 300px;
-font-size: 4em;
-}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAbout()">&times;</span>
+            <p> This Tracery project explores the foundational grammar of web development, serving as a generative primer for beginning coders. The code generates randomized scenarios that cover basic principles and common development roadblocks, such as syntax errors and broken pages. Currently, I’m at an expert level with broken pages. My exploration focuses on the role of markup languages. Drucker describes Markup languages as “sets of codes, embodied in tags, that are used to analyze the contents of textual documents” (2021, p. 61). Common markup languages include XML, TEI, KML, and JSON. For a beginner, however, the most immediate hurdle is the web’s basic structure. 
+            Before trying to figure out why an image won't load or hunting down a single missing closing tag, one must understand the building blocks. Focusing on that foundation, Drucker notes that "HTML is a descriptive language that identifies the structural elements of a document. All HTML documents are structured with tags-standard terms inserted between angle brackets that are actually instructions” (2021, p. 35). By recombining these structural instructions with the errors that result from misusing them, the project highlights how digital environments require both rigid logic and creative problem-solving.
+            <br><br>
+            Drucker, J. (2021). The digital humanities coursebook: An introduction to digital methods for research and scholarship. Routledge.</p> 
+        </div>
+    </div>
 
-@media (max-width: 600px) {
-#title-container {
-max-height: 200px;
-}
+    <script> 
+        /* Tracery/CBDQ JSON */
+        var obj = {
+            "name": ["Leon Davis-Birdsong"],
+            "origin": ["#name#\n#sentence#"],
+            "sentence": ["#sentence1#", "#sentence2#"],
+            "sentence1": ["A beginning coder can learn to recognize #codingConcept# by using different #learningMethods# while working in a #programmingLanguage#."],
+            "sentence2": ["When a student encounters #codeProblem#, they can use multiple #strategies# to develop their #codingSkills#."],
+            "codingConcept": ["variables", "loops", "functions", "conditionals", "syntax"],
+            "learningMethod": ["guided YouTube tutorials", "practice exercises", "example programs", "class discussions", "coding demonstrations"],
+            "programmingLanguage": ["Python", "JavaScript", "Java", "C++", "SQL", "Visual Basic"],
+            "codeProblem": ["an unfamiliar error message", "a missing punctuation mark", "an undefined variable", "an incorrect command", "a confusing code block"],
+            "strategy": ["reading the error carefully", "checking each line", "reviewing an example", "testing one change at a time", "asking for guidance"],
+            "codingSkill": ["problem-solving ability", "code-reading confidence", "debugging skills", "logical thinking", "syntax recognition"]
+        };
+    </script>
+</body>
+</html>
 
-#text-container {
-width: 100%;
-}
-}
-
-#text-container {
-text-align: center;
-font-size: 1.5em;
-color: #431bf7c6;
-margin: auto; /* Center horizontally and vertically */
-border: 0px solid black; /* Change 0px to your desired border thickness, if desired */
-padding: 10px;
-width: 600px;
-}
-
-/* CSS for buttons and modal */
-#button-container {
-position: fixed;
-bottom: 10px;
-left: 50%;
-transform: translateX(-50%);
-text-align: center;
-width: 100%;
-}
-
-.button {
-margin: 10px;
-font-size: 2em;
-}
-
-.modal {
-display: none; /* Hidden by default */
-position: fixed; /* Stay in place */
-z-index: 1; /* Sit on top */
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: auto; /* Enable scroll if needed */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modal-content {
-background-color: #fefefe;
-margin: 15% auto; /* 15% from the top and centered */
-padding: 20px;
-border: 1px solid #888;
-width: 80%; /* Could be more or less, depending on screen size */
-font-size: 2.5em;
-}
-
-/* The Close Button */
-.close {
-color: #aaa;
-float: right;
-font-size: 28px;
-font-weight: bold;
-}
-</style>
-</head>
-<body>
-<div id="title-container">A Beginning Coder!</div>
-
-<div id="text-container">This engine teach you the basics of Tracery grammar!</div>
-
-<div id="button-container">
-<button class="button" onclick="displayAbout()">About</button>
-<button class="button" onclick="displayString()">Regenerate</button>
-</div>
-
-<div id="myModal" class="modal">
-<!-- Replace the statement below with your abstract. -->
-<div class="modal-content">
-<span class="close">×</span>
-                <p> This is my abstract! I wrote a lot of cool things in Word or Google Docs and then pasted it into the code under the comment "Replace the statement below with your abstract" Woo.
-                <p> This Tracery project explores the foundational grammar of web development, serving as a generative primer for beginning coders. The code generates randomized scenarios that cover basic principles and common development roadblocks, such as syntax errors and broken pages. Currently, I’m at an expert level with broken pages. My exploration focuses on the role of markup languages. Drucker describes Markup languages as “sets of codes, embodied in tags, that are used to analyze the contents of textual documents” (2021, p. 61). Common markup languages include XML, TEI, KML, and JSON. For a beginner, however, the most immediate hurdle is the web’s basic structure. 
-Before trying to figure out why an image won't load or hunting down a single missing closing tag, one must understand the building blocks. Focusing on that foundation, Drucker notes that "HTML is a descriptive language that identifies the structural elements of a document. All HTML documents are structured with tags-standard terms inserted between angle brackets that are actually instructions” (2021, p. 35). By recombining these structural instructions with the errors that result from misusing them, the project highlights how digital environments require both rigid logic and creative problem-solving.
-
-Drucker, J. (2021). The digital humanities coursebook: An introduction to digital methods for research and scholarship. Routledge.
-</p> 
-</div>
-</div>
-<script> /* In the var immediately below, copy-paste your Tracery/CBDQ JSON between the {} brackets */
-var obj = {
-
-{
-"name": [
-"Leon Davis-Birdsong"
-],
-
-"origin": [
-"#name#\n#sentence#"
-],
-
-"sentence": [
-"#sentence1#",
-"#sentence2#"
-],
-
-"sentence1": [
-"A beginning coder can learn to recognize #codingConcept# by using different #learningMethods# while working in a #programmingLanguage#."
-],
-
-"sentence2": [
-"When a student encounters #codeProblem#, they can use multiple #strategies# to develop their #codingSkills#."
-],
-
-"codingConcept": [
-"variables",
-"loops",
-"functions",
-"conditionals",
-"syntax"
-],
-
-"learningMethod": [
-"guided YouTube tutorials",
-"practice exercises",
-"example programs",
-"class discussions",
-"coding demonstrations"
-],
-
-"programmingLanguage": [
-"Python",
-"JavaScript",
-"Java",
-"C++",
-"SQL",
-"Visual Basic"
-],
-
-"codeProblem": [
-"an unfamiliar error message",
-"a missing punctuation mark",
-"an undefined variable",
-"an incorrect command",
-"a confusing code block"
-],
-
-"strategy": [
-"reading the error carefully",
-"checking each line",
-"reviewing an example",
-"testing one change at a time",
-"asking for guidance"
-],
-
-"codingSkill": [
-"problem-solving ability",
-"code-reading confidence",
-"debugging skills",
-"logical thinking",
-"syntax recognition"
-]
-}
