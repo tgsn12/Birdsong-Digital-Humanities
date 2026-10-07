@@ -116,8 +116,37 @@
     </div>
 
     <script> 
-        /* Tracery/CBDQ JSON */
-        var obj = {
+        /* tracery/CBDQ JSON */
+        var obj = { function generateString(template) {
+    return template.replace(/#([^#]+)#/g, function (match, key) {
+        var choices = obj[key];
+        if (!Array.isArray(choices) || choices.length === 0) return match;
+        return generateString(choices[Math.floor(Math.random() * choices.length)]);
+    });
+}
+
+function displayString() {
+    var choices = obj.origin;
+    var template = choices[Math.floor(Math.random() * choices.length)];
+    document.getElementById("text-container").textContent = generateString(template);
+}
+
+var modal = document.getElementById("myModal");
+
+function displayAbout() {
+    modal.style.display = "block";
+}
+
+document.querySelector(".close").onclick = function () {
+    modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+    if (event.target === modal) modal.style.display = "none";
+};
+
+displayString();
+		
             "name": ["Leon Davis-Birdsong"],
             "origin": ["#name#\n#sentence#"],
             "sentence": ["#sentence1#", "#sentence2#"],
