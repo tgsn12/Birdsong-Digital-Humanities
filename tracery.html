@@ -117,7 +117,7 @@
 
     <script> 
         /* tracery/CBDQ JSON */
-        var obj = { function generateString(template) {
+	        var obj = { function generateString(template) };
     return template.replace(/#([^#]+)#/g, function (match, key) {
         var choices = obj[key];
         if (!Array.isArray(choices) || choices.length === 0) return match;
@@ -150,8 +150,8 @@ displayString();
             "name": ["Leon Davis-Birdsong"],
             "origin": ["#name#\n#sentence#"],
             "sentence": ["#sentence1#", "#sentence2#"],
-            "sentence1": ["A beginning coder can learn to recognize #codingConcept# by using different #learningMethods# while working in a #programmingLanguage#."],
-            "sentence2": ["When a student encounters #codeProblem#, they can use multiple #strategies# to develop their #codingSkills#."],
+            "sentence1": ["A beginning coder can learn to recognize #codingConcept# by using different #learningMethod# while working in a #programmingLanguage#."],
+            "sentence2": ["When a student encounters #codeProblem#, they can use multiple #strategy# to develop their #codingSkill#."],
             "codingConcept": ["variables", "loops", "functions", "conditionals", "syntax"],
             "learningMethod": ["guided YouTube tutorials", "practice exercises", "example programs", "class discussions", "coding demonstrations"],
             "programmingLanguage": ["Python", "JavaScript", "Java", "C++", "SQL", "Visual Basic"],
