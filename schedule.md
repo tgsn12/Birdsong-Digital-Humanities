@@ -19,7 +19,7 @@ The official syllabus is available [in Webcourses.](https://webcourses.ucf.edu/c
 - [Digital Narrative/Game](game.html)
 - [Tracery HTML Project](tracery.html)
 - [Research Project](researchproject.md)
-- [Social Media and Coding](Social%20Media%20and%20Coding.html)
+
   
 ---  
   
